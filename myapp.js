@@ -43,19 +43,31 @@ myApp.controller("myappcontroller",mycontroller);
 
 ///part 4 :
 
-var myApp=angular
+// var myApp=angular
+// 				.module("myApp",[])
+// 				.controller("myappcontroller",function ($scope){
+	
+// 	$scope.messsage="My sample message";
+	
+// 	var country ={
+// 		name:"Pallava Kingdom",
+// 		capital:"Kanchipuram",
+// 		flag:"flag_of_Pallava_Kingdom.png"
+		
+		
+// 	};
+// 	$scope.country=country;
+// 				}	
+// );
+
+
+				var myApp=angular
 				.module("myApp",[])
 				.controller("myappcontroller",function ($scope){
 	
 	$scope.messsage="My sample message";
 	
-	var country ={
-		name:"Pallava Kingdom",
-		capital:"Kanchipuram",
-		flag:"flag_of_Pallava_Kingdom.png"
-		
-		
-	};
-	$scope.country=country;
+	
+	
 				}	
 );
