@@ -25,12 +25,12 @@
 
 
 <ul>
-	<li ng-repeat="country in countries">
-		{{country.Name}}
+	<li ng-repeat="country in countries" ng-init="v_ParentIndex=$index">
+		{{country.Name}} --- Index {{$index}}
 		<ul>
 	<li ng-repeat="name in country.Cities">
 		
-		{{name.city}}
+		{{name.city}} --- Index {{$index}} --- Parent Index {{$parent.$index}} --- Parent Index using variable {{v_ParentIndex}}
 	</li>
 
 
