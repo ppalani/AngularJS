@@ -65,7 +65,13 @@ myApp.controller("myappcontroller",mycontroller);
 				.module("myApp",[])
 				.controller("myappcontroller",function ($scope){
 	
-	$scope.messsage="My sample message";
+var fruit={
+Name:"Tomato",colour:"Red",Family:"berry"
+};
+
+
+
+	$scope.fruit=fruit;
 	
 	
 	

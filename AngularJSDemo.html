@@ -5,31 +5,27 @@
 <body ng-app="myApp">
 <script src ="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
 <script src ="myapp.js"></script>
-<div>
-5+2=={{5+2}}
 
-
-</div>
 
 <div ng-controller="myappcontroller">
 
+<table>
+	<tr>
+		<td>Name</td><td><input type="text" ng-model="fruit.Name" /></td>
+		<td>colour</td><td><input type="text" ng-model="fruit.colour" /></td>
+		<td>Family</td><td><input type="text" ng-model="fruit.Family" /></td>
+	</tr>
+</table>
 
-
-
-Message:<input type="text" ng-model="messsage" />
-
-</br>
-{{messsage}}
-
-</br>
-test for variables with out binding in jsfile:<input type="text" ng-model="varwithoutbind" />
-
-</br>
-{{varwithoutbind}}
-
+<table>
+	<tr>
+		<td>Name</td><td>{{fruit.Name}}</td>
+		<td>colour</td><td>{{fruit.colour}}</td>
+		<td>Family</td><td>{{fruit.Family}}</td>
+	</tr>
+</table>
 
 </div>
-
 
 
 </body>
