@@ -9,36 +9,44 @@
 
 <div ng-controller="myappcontroller">
 
-<table >
-	<th><tr><td>Name</td><td>colour</td><td>Family</td></tr></th>
-	<tbody><tr  ng-repeat=" i in fruit">
-<td>{{i.Name}}</td>
-<td>{{i.colour}}</td>
+<table>
+	
+<th>
+	<tr>
+		<td>Tech  Name</td>
+				<td>Likes</td>
 
-<td>{{i.Family}}</td>
+		<td>
+			Dislikes
+		</td>
 
-</tr>
-	</tbody>
+		<td>Click to Like or Dislike</td>
+
+
+	</tr>
+
+</th>
+
+<tbody>
+	<tr ng-repeat="tech in technologies">
+		<td>{{tech.Name}}</td>
+				<td>{{tech.likes}}</td>
+		<td>{{tech.dislikes}}</td>
+		<td><input type="button" value ='like' ng-click="increment(tech)"><input type="button" value ='Dislike' ng-click="decrement(tech)"></td>
+
+
+
+	</tr>
+	
+
+
+</tbody>
 
 </table>
 
 
 
-<ul>
-	<li ng-repeat="country in countries" ng-init="v_ParentIndex=$index">
-		{{country.Name}} --- Index {{$index}}
-		<ul>
-	<li ng-repeat="name in country.Cities">
-		
-		{{name.city}} --- Index {{$index}} --- Parent Index {{$parent.$index}} --- Parent Index using variable {{v_ParentIndex}}
-	</li>
 
-
-</ul>
-	</li>
-
-
-</ul>
 
 </div>
 

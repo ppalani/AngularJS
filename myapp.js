@@ -65,45 +65,29 @@ myApp.controller("myappcontroller",mycontroller);
 				.module("myApp",[])
 				.controller("myappcontroller",function ($scope){
 	
-var fruit=[{Name:"Tomato",colour:"Red",Family:"berry"},
-{Name:"strawberries",colour:"Rose",Family:"Aggregate fruit"},
-{Name:"peppers",colour:"Green",Family:"berry"},
-{Name:"peas",colour:"Green",Family:"Legumes"},
-{Name:"olives",colour:"Black",Family:"Drupe"}
-];
+var technologies=[
+{Name:"JAVA",likes:0,dislikes:0},
+{Name:"Python",likes:0,dislikes:0},
+{Name:"Ruby",likes:0,dislikes:0},
+{Name:"C++",likes:0,dislikes:0},
+{Name:"C#",likes:0,dislikes:0},
+{Name:"Ruby on rails",likes:0,dislikes:0}
 
-var country=[
-{
-	Name:"India",
-	Cities:[
-	{city:"Delhi"},
-	{city:"Kanchipuram"},
-	{city:"Chennai"}
-	]
-},
-{
-	Name:"France",
-	Cities:[
-	{city:"Paris"},
-	{city:"Nice"},
-	{city:"Versalies"}
-	]
-},
-{
-	Name:"Ireland",
-	Cities:[
-	{city:"Dublin"},
-	{city:"Wicklow"},
-	{city:"Cork"}
-	]
-}
+
 
 ];
+$scope.technologies=technologies;
 
 
-
-	$scope.countries=country;
+$scope.increment=function(technology)
+{
+technology.likes++;
+};
 	
+	$scope.decrement=function(technology)
+{
+technology.dislikes++;
+};
 	
 	
 				}	
