@@ -58,7 +58,7 @@ myApp.controller("myappcontroller",mycontroller);
 // 	};
 // 	$scope.country=country;
 // 				}	
-// );
+// );s
 
 
 				var myApp=angular
@@ -72,9 +72,37 @@ var fruit=[{Name:"Tomato",colour:"Red",Family:"berry"},
 {Name:"olives",colour:"Black",Family:"Drupe"}
 ];
 
+var country=[
+{
+	Name:"India",
+	Cities:[
+	{city:"Delhi"},
+	{city:"Kanchipuram"},
+	{city:"Chennai"}
+	]
+},
+{
+	Name:"France",
+	Cities:[
+	{city:"Paris"},
+	{city:"Nice"},
+	{city:"Versalies"}
+	]
+},
+{
+	Name:"Ireland",
+	Cities:[
+	{city:"Dublin"},
+	{city:"Wicklow"},
+	{city:"Cork"}
+	]
+}
+
+];
 
 
-	$scope.fruit=fruit;
+
+	$scope.countries=country;
 	
 	
 	
