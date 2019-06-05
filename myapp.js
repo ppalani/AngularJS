@@ -23,21 +23,39 @@ var mycontroller=function ($scope){
 myApp.controller("myappcontroller",mycontroller);
 
 
- */
+//  */
+// var myApp=angular
+// 				.module("myApp",[])
+// 				.controller("myappcontroller",function ($scope){
+	
+// 	$scope.messsage="My sample message";
+	
+// 	var person ={
+// 		fname:"praveen",
+// 		lname:"Palani",
+// 		gender:"Male"
+		
+		
+// 	};
+// 	$scope.student=person;
+// 				}	
+// );
+
+///part 4 :
+
 var myApp=angular
 				.module("myApp",[])
 				.controller("myappcontroller",function ($scope){
 	
 	$scope.messsage="My sample message";
 	
-	var person ={
-		fname:"praveen",
-		lname:"Palani",
-		gender:"Male"
+	var country ={
+		name:"Pallava Kingdom",
+		capital:"Kanchipuram",
+		flag:"flag_of_Pallava_Kingdom.png"
 		
 		
 	};
-	$scope.student=person;
+	$scope.country=country;
 				}	
 );
-
