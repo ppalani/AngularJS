@@ -65,9 +65,12 @@ myApp.controller("myappcontroller",mycontroller);
 				.module("myApp",[])
 				.controller("myappcontroller",function ($scope){
 	
-var fruit={
-Name:"Tomato",colour:"Red",Family:"berry"
-};
+var fruit=[{Name:"Tomato",colour:"Red",Family:"berry"},
+{Name:"strawberries",colour:"Rose",Family:"Aggregate fruit"},
+{Name:"peppers",colour:"Green",Family:"berry"},
+{Name:"peas",colour:"Green",Family:"Legumes"},
+{Name:"olives",colour:"Black",Family:"Drupe"}
+];
 
 
 

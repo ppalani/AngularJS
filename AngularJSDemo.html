@@ -9,20 +9,17 @@
 
 <div ng-controller="myappcontroller">
 
-<table>
-	<tr>
-		<td>Name</td><td><input type="text" ng-model="fruit.Name" /></td>
-		<td>colour</td><td><input type="text" ng-model="fruit.colour" /></td>
-		<td>Family</td><td><input type="text" ng-model="fruit.Family" /></td>
-	</tr>
-</table>
+<table >
+	<th><tr><td>Name</td><td>colour</td><td>Family</td></tr></th>
+	<tbody><tr  ng-repeat=" i in fruit">
+<td>{{i.Name}}</td>
+<td>{{i.colour}}</td>
 
-<table>
-	<tr>
-		<td>Name</td><td>{{fruit.Name}}</td>
-		<td>colour</td><td>{{fruit.colour}}</td>
-		<td>Family</td><td>{{fruit.Family}}</td>
-	</tr>
+<td>{{i.Family}}</td>
+
+</tr>
+	</tbody>
+
 </table>
 
 </div>
