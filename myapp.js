@@ -83,5 +83,25 @@ $scope.employees=employees;
 $scope.rowlim=3;
 $scope.sortcol="Name";
 
+$scope.scolname="Name";
+
+$scope.scolbol=false;
+
+$scope.getsortcol=function(colname)
+{
+if($scope.scolname==colname)
+{
+	$scope.scolbol=true;
+	console.log($scope.scolbol,colname)
+}
+else {
+	$scope.scolbol=false;
+}
+	$scope.scolname=colname;
+}
+
+
+
+
 				}
 );

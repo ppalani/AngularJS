@@ -22,21 +22,23 @@ sort by
 
 </select>
 </br>
+Search : <input type="text" ng-model="searc.Name" placeholder="Search employees" />
+</br>
 <table>
 
 <th>
 	<tr>
-		<td>Name</td>
-				<td>Tech</td>
+		<td ng-click="getsortcol('Name')">Name</td>
+				<td ng-click="getsortcol('tech')">Tech</td>
 
-		<td>
+		<td ng-click="getsortcol('Salary')">
 			Salary (Number)
-		</td>
+		</td ng-click="getsortcol('Salary')">
 		<td>
 			Salary (Currency)
 		</td>
 
-		<td>DOB</td>
+		<td ng-click="getsortcol('DOB')">DOB</td>
 
 
 	</tr>
@@ -44,7 +46,7 @@ sort by
 </th>
 
 <tbody>
-	<tr ng-repeat="emp in employees | limitTo:rowlim:0 |orderBy:sortcol">
+	<tr ng-repeat="emp in employees | limitTo:rowlim:0 |orderBy:scolname:scolbol | filter:searc">
 		<td>{{emp.Name | uppercase}}</td>
 				<td>{{emp.tech | lowercase}}</td>
 		<td>{{emp.Salary | number:2}}</td>
