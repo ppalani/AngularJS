@@ -23,6 +23,8 @@ sort by
 </select>
 </br>
 Search : <input type="text" ng-model="searc.Name" placeholder="Search employees" />
+Search : <input type="text" ng-model="searc.tech" placeholder="Search tech" />
+Strich Search :<input type="checkbox" ng-model="exact" />
 </br>
 <table>
 
@@ -46,7 +48,7 @@ Search : <input type="text" ng-model="searc.Name" placeholder="Search employees"
 </th>
 
 <tbody>
-	<tr ng-repeat="emp in employees | limitTo:rowlim:0 |orderBy:scolname:scolbol | filter:searc">
+	<tr ng-repeat="emp in employees | limitTo:rowlim:0 |orderBy:scolname:scolbol | filter:searc:exact">
 		<td>{{emp.Name | uppercase}}</td>
 				<td>{{emp.tech | lowercase}}</td>
 		<td>{{emp.Salary | number:2}}</td>
