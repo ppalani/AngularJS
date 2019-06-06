@@ -8,19 +8,23 @@
 
 
 <div ng-controller="myappcontroller">
-
+Limit the no of rows to be displayed <input type="number" step="1" min="0" max="5" ng-model="rowlim">
+</br>
 <table>
 	
 <th>
 	<tr>
-		<td>Tech  Name</td>
-				<td>Likes</td>
+		<td>Name</td>
+				<td>Tech</td>
 
 		<td>
-			Dislikes
+			Salary (Number)
+		</td>
+		<td>
+			Salary (Currency)
 		</td>
 
-		<td>Click to Like or Dislike</td>
+		<td>DOB</td>
 
 
 	</tr>
@@ -28,11 +32,13 @@
 </th>
 
 <tbody>
-	<tr ng-repeat="tech in technologies">
-		<td>{{tech.Name}}</td>
-				<td>{{tech.likes}}</td>
-		<td>{{tech.dislikes}}</td>
-		<td><input type="button" value ='like' ng-click="increment(tech)"><input type="button" value ='Dislike' ng-click="decrement(tech)"></td>
+	<tr ng-repeat="emp in employees | limitTo:rowlim:0">
+		<td>{{emp.Name | uppercase}}</td>
+				<td>{{emp.tech | lowercase}}</td>
+		<td>{{emp.Salary | number:2}}</td>
+		<td>{{emp.Salary | currency:"INR"}}</td>
+		<td>{{emp.DOB | date:"dd-MMM-yyyy"}}</td>
+
 
 
 

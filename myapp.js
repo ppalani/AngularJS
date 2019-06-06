@@ -64,31 +64,24 @@ myApp.controller("myappcontroller",mycontroller);
 				var myApp=angular
 				.module("myApp",[])
 				.controller("myappcontroller",function ($scope){
-	
-var technologies=[
-{Name:"JAVA",likes:0,dislikes:0},
-{Name:"Python",likes:0,dislikes:0},
-{Name:"Ruby",likes:0,dislikes:0},
-{Name:"C++",likes:0,dislikes:0},
-{Name:"C#",likes:0,dislikes:0},
-{Name:"Ruby on rails",likes:0,dislikes:0}
+var employees =
+[
+
+{Name:"Ben",tech:"FICC",Salary:"23400.56",DOB:new Date("13-MAY-1989")},
+{Name:"Sara",tech:"java",Salary:"34400",DOB:new Date("16-JUN-1976")},
+{Name:"Niamh",tech:"C3",Salary:"45400.56",DOB:new Date("18-AUG-1976")},
+{Name:"Maurice",tech:"Business",Salary:"56400.56",DOB:new Date("22-MAY-1976")},
+{Name:"Bala",tech:"Oralce",Salary:"67400.562323",DOB:new Date("12-NOV-1976")},
+{Name:"Bruno",tech:"SCRUM",Salary:"78400.56",DOB:new Date("11-DEC-1976")},
 
 
 
-];
-$scope.technologies=technologies;
+
+]
+
+$scope.employees=employees;
+$scope.rowlim=3;
 
 
-$scope.increment=function(technology)
-{
-technology.likes++;
-};
-	
-	$scope.decrement=function(technology)
-{
-technology.dislikes++;
-};
-	
-	
 				}	
 );
