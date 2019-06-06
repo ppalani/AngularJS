@@ -10,8 +10,20 @@
 <div ng-controller="myappcontroller">
 Limit the no of rows to be displayed <input type="number" step="1" min="0" max="5" ng-model="rowlim">
 </br>
+sort by
+</br>
+<select ng-model="sortcol">
+<option value="+Name">Name ASC</option>
+	<option value="-Name">Name desc</option>
+		<option value="+Salary">Salary asc</option>
+
+		<option value="-Salary">salary desc</option>
+
+
+</select>
+</br>
 <table>
-	
+
 <th>
 	<tr>
 		<td>Name</td>
@@ -32,7 +44,7 @@ Limit the no of rows to be displayed <input type="number" step="1" min="0" max="
 </th>
 
 <tbody>
-	<tr ng-repeat="emp in employees | limitTo:rowlim:0">
+	<tr ng-repeat="emp in employees | limitTo:rowlim:0 |orderBy:sortcol">
 		<td>{{emp.Name | uppercase}}</td>
 				<td>{{emp.tech | lowercase}}</td>
 		<td>{{emp.Salary | number:2}}</td>
@@ -43,7 +55,7 @@ Limit the no of rows to be displayed <input type="number" step="1" min="0" max="
 
 
 	</tr>
-	
+
 
 
 </tbody>
