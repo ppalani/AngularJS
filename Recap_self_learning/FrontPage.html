@@ -1,0 +1,72 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
+
+<script src="AngJavaScript.js"></script>
+
+<h1>Product catalogue / Data inventory</h1>
+</head>
+<body  ng-app="myapp">
+
+<div ng-controller="mycontroller">
+<img ng-src="{{Muruga_location}}" />
+
+<div id="usercontrolsection">
+<b>Limit no of rows:</b>
+
+</br> 
+No of rows to display:<input type="number" ng-model="maxrow" min="0" max="100" step="1" />
+
+</br>
+
+Filter by product name and pricing type :<input type="text" ng-model="searchtext" placeholder="enter the search phrase">
+
+</br>
+
+</div>
+</br>
+<table border="1">
+<thead>
+<tr>
+<td>S No</td>
+<td>Product ID</td>
+<td>Product Name</td>
+<td>Rate</td>
+<td>Pricing Type</td>
+<td>Create Date</td>
+<td>Quantity</td>
+<td>Amount by action event</td>
+<td>Amount by a custom filter</td>
+</tr>
+
+<tbody>
+<tr ng-repeat="item in products  |limitTo:maxrow |filter:customsearch" ng-init="s_no=$index+1">
+<td>{{s_no}}</td>
+<td>{{item.PROD_ID |uppercase}}</td>
+<td>{{item.PROD_NAME  |lowercase}}</td>
+<td>{{item.Rate |currency:"INR"}}</td>
+<td>{{item.PriceType |lowercase}}</td>
+<td>{{item.create_date}}</td>
+<td>{{item.Quantity}}</td>
+<td ng-click="calculateAmt(item)">{{item.Amount |number :0}}</td>
+<td >{{item | calcamt |number:0 }}</td>
+
+</tr>
+
+
+</tbody>
+
+</thead>
+
+
+</table>
+
+
+
+</div>
+
+
+
+
+</body>
+</html>
