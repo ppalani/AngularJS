@@ -1,7 +1,7 @@
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.js"></script>
-
+<link href="style_sheet.css" rel="stylesheet" />
 <script src="AngJavaScript.js"></script>
 
 <h1>Product catalogue / Data inventory</h1>
@@ -23,24 +23,33 @@ Filter by product name and pricing type :<input type="text" ng-model="searchtext
 
 </br>
 
+To Sort by :<select ng-model="sortbycol"> 
+<option value ="+PROD_NAME">Product name asc</option>
+<option value ="-PROD_NAME">Product name desc</option>
+<option value ="+Rate">Price asc </option>
+<option value ="-Rate">Price desc</option>
+
+</select>
+</br>
+
 </div>
 </br>
-<table border="1">
+<table>
 <thead>
 <tr>
 <td>S No</td>
 <td>Product ID</td>
-<td>Product Name</td>
-<td>Rate</td>
+<td ng-click="headersortfunc('PROD_NAME')">Product Name<div ng-class="getsortclass('PROD_NAME')" ></div></td>
+<td ng-click="headersortfunc('Rate')">Rate<div ng-class="getsortclass('Rate')"></div></td>
 <td>Pricing Type</td>
-<td>Create Date</td>
-<td>Quantity</td>
+<td ng-click="headersortfunc('create_date')">Create Date<div ng-class="getsortclass('create_date')"></div></td>
+<td ng-click="headersortfunc('Quantity')">Quantity<div ng-class="getsortclass('Quantity')"></div></td>
 <td>Amount by action event</td>
 <td>Amount by a custom filter</td>
 </tr>
 
 <tbody>
-<tr ng-repeat="item in products  |limitTo:maxrow |filter:customsearch" ng-init="s_no=$index+1">
+<tr ng-repeat="item in products | orderBy:headersortcol:reversesort |limitTo:maxrow | filter:customsearch " ng-init="s_no=$index+1">
 <td>{{s_no}}</td>
 <td>{{item.PROD_ID |uppercase}}</td>
 <td>{{item.PROD_NAME  |lowercase}}</td>

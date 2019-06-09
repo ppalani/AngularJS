@@ -69,6 +69,46 @@ else
 	
 }
 
+$scope.headersortcol='PROD_NAME';
+$scope.reversesort=false;
+
+
+$scope.getsortclass=function(colname)
+{
+	if($scope.headersortcol==colname)
+	{
+		if($scope.reversesort)
+		{
+			return "arrow-down";
+		}
+		else
+		{
+			return "arrow-up";
+		}
+	}
+	
+	return "arrow-default";
+}
+
+
+$scope.headersortfunc =function (colname)
+{
+	if($scope.headersortcol=colname && $scope.reversesort)
+	{
+		$scope.reversesort=false;
+	}
+	else{
+	$scope.reversesort=true;
+	}
+	
+	
+	$scope.headersortcol=colname
+}
+
+
+
+
+
 
 
 		
